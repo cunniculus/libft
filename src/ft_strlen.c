@@ -6,11 +6,11 @@
 /*   By: guolivei <guolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 03:20:11 by guolivei          #+#    #+#             */
-/*   Updated: 2022/09/04 22:03:58 by guolivei         ###   ########.fr       */
+/*   Updated: 2022/09/14 22:59:27 by guolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h> //definition of size_t
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

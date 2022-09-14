@@ -33,6 +33,9 @@ $(OBJ_TEST): $(SRCS_TEST) $(HEADER_TEST)
 leakfull: $(NAME_TEST)
 	@valgrind --leak-check=full ./$(NAME_TEST)
 
+ft_split:  $(NAME_TEST)
+	@./$(NAME_TEST) ft_split
+
 clean:
 	@make -C $(LIBDIR) clean
 	@rm -f $(OBJ_TEST)

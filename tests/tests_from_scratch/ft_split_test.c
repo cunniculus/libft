@@ -24,7 +24,7 @@ void	ft_split_test (void)
 			!strcmp(split[1], "alone,")  && \
 			!strcmp(split[2], "man!") && \
 			split[3] ==  NULL)
-		printf(PRINTGRN("OK! "));
+		printf(PRINTGRN("OK "));
 	else
 	{
 		printf(PRINTRED("FAIL! "));
@@ -38,7 +38,7 @@ void	ft_split_test (void)
 	if (!ft_strncmp(split[0], "Home", ft_strlen(split[0])) && \
 			!ft_strncmp(split[1], "alone,", ft_strlen(split[1]))  && \
 			!ft_strncmp(split[2], "man!", ft_strlen(split[2])) && split[3] ==  NULL)
-		printf(PRINTGRN("OK! "));
+		printf(PRINTGRN("OK "));
 	else
 	{
 		printf(PRINTRED("FAIL! "));
@@ -52,7 +52,7 @@ void	ft_split_test (void)
 	if (!ft_strncmp(split[0], "Home", ft_strlen(split[0])) && \
 			!ft_strncmp(split[1], "alone,", ft_strlen(split[1]))  && \
 			!ft_strncmp(split[2], "man!", ft_strlen(split[2])) && split[3] ==  NULL)
-		printf(PRINTGRN("OK! "));
+		printf(PRINTGRN("OK "));
 	else
 	{
 		printf(PRINTRED("FAIL! "));
@@ -65,7 +65,7 @@ void	ft_split_test (void)
 	split = ft_split("Home", ' ');
 	if (!ft_strncmp(split[0], "Home", ft_strlen(split[0]) + 1) && \
 			split[1] ==  NULL)
-		printf(PRINTGRN("OK! "));
+		printf(PRINTGRN("OK "));
 	else
 	{
 		printf(PRINTRED("FAIL! "));
@@ -78,7 +78,7 @@ void	ft_split_test (void)
 	split = ft_split("Home        ", ' ');
 	if (!ft_strncmp(split[0], "Home", ft_strlen(split[0]) + 1) && \
 			split[1] ==  NULL)
-		printf(PRINTGRN("OK! "));
+		printf(PRINTGRN("OK "));
 	else
 	{
 		printf(PRINTRED("FAIL! "));
@@ -91,7 +91,7 @@ void	ft_split_test (void)
 	split = ft_split("         Home        ", ' ');
 	if (!ft_strncmp(split[0], "Home", ft_strlen(split[0]) + 1) && \
 			split[1] ==  NULL)
-		printf(PRINTGRN("OK! "));
+		printf(PRINTGRN("OK "));
 	else
 	{
 		printf(PRINTRED("FAIL! "));
@@ -104,7 +104,7 @@ void	ft_split_test (void)
 	split = ft_split("         Home", ' ');
 	if (!ft_strncmp(split[0], "Home", ft_strlen(split[0]) + 1) && \
 			split[1] ==  NULL)
-		printf(PRINTGRN("OK! "));
+		printf(PRINTGRN("OK "));
 	else
 	{
 		printf(PRINTRED("FAIL! "));
@@ -117,7 +117,7 @@ void	ft_split_test (void)
 	split = ft_split("Trepouille", ' ');
 	if (!ft_strncmp(split[0], "Trepouille", ft_strlen(split[0]) + 1) && \
 			split[1] ==  NULL)
-		printf(PRINTGRN("OK! "));
+		printf(PRINTGRN("OK "));
 	else
 	{
 		printf(PRINTRED("FAIL! "));
@@ -129,7 +129,7 @@ void	ft_split_test (void)
 	printf("09. ");
 	split = ft_split("      tripouille     42     ", ' ');
 	if (!strcmp(split[0], "tripouille") && !strcmp(split[1], "42") && split[2] == NULL)
-		printf(PRINTGRN("OK! "));
+		printf(PRINTGRN("OK "));
 	else
 	{
 		printf(PRINTRED("FAIL! "));
@@ -142,7 +142,7 @@ void	ft_split_test (void)
 	split = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'z');
 	if (!ft_strncmp(split[0], "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", ft_strlen(split[0]) + 1) && \
 			split[1] ==  NULL)
-		printf(PRINTGRN("OK! "));
+		printf(PRINTGRN("OK "));
 	else
 	{
 		printf(PRINTRED("FAIL! "));
@@ -154,7 +154,7 @@ void	ft_split_test (void)
 	printf("11. ");
 	split = ft_split("", ' ');
 	if ( split[0] ==  NULL)
-		printf(PRINTGRN("OK! "));
+		printf(PRINTGRN("OK "));
 	else
 	{
 		printf(PRINTRED("FAIL! "));
@@ -166,7 +166,7 @@ void	ft_split_test (void)
 	printf("12. ");
 	split = ft_split("       ", ' ');
 	if ( split[0] ==  NULL)
-		printf(PRINTGRN("OK! "));
+		printf(PRINTGRN("OK "));
 	else
 	{
 		printf(PRINTRED("FAIL! "));
@@ -178,7 +178,7 @@ void	ft_split_test (void)
 	printf("13. ");
 	split = ft_split("   .  ", ' ');
 	if (!strcmp(split[0], ".") && split[1] ==  NULL)
-		printf(PRINTGRN("OK! "));
+		printf(PRINTGRN("OK "));
 	else
 	{
 		printf(PRINTRED("FAIL! "));
@@ -195,7 +195,7 @@ void	ft_split_test (void)
 			!strcmp(split[6], "adipiscing") && !strcmp(split[7], "elit.") && \
 			!strcmp(split[8], "Sed") && !strcmp(split[9], "non") && \
 			!strcmp(split[10], "risus.") && split[11] ==  NULL)
-		printf(PRINTGRN("OK! "));
+		printf(PRINTGRN("OK "));
 	else
 	{
 		printf(PRINTRED("FAIL! "));
@@ -207,7 +207,7 @@ void	ft_split_test (void)
 	printf("15. ");
 	split = ft_split ("tripouille", 0);
 	if (!strcmp(split[0], "tripouille") && split[1]  ==  NULL)
-		printf(PRINTGRN("OK! "));
+		printf(PRINTGRN("OK "));
 	else
 	{
 		printf(PRINTRED("FAIL! "));
@@ -225,7 +225,7 @@ void	ft_split_test (void)
 		!strcmp(split[4], "5") && \
 		!strcmp(split[5], "42") && \
 		split[6]  ==  NULL)
-		printf(PRINTGRN("OK! "));
+		printf(PRINTGRN("OK "));
 	else
 	{
 		printf(PRINTRED("FAIL! "));
