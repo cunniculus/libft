@@ -30,6 +30,9 @@ $(LIBTEST): $(OBJ_TEST)
 $(OBJ_TEST): $(SRCS_TEST) $(HEADER_TEST)
 	cc $(CFLAGS) -c $(SRCS_TEST) -I$(INCLUDEDIR)
 
+leakfull: $(NAME_TEST)
+	@valgrind --leak-check=full ./$(NAME_TEST)
+
 clean:
 	@make -C $(LIBDIR) clean
 	@rm -f $(OBJ_TEST)
