@@ -3,7 +3,7 @@ name: norminette
 on:
   push:
     branches:
-      - master
+      - main
       
 jobs:
   norminette:
