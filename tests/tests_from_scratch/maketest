@@ -1,0 +1,63 @@
+include /home/coder/Cursus/libft/src/Makefile
+
+test_src = $(wildcard main*.c)
+
+##########
+# PART 2 #
+##########
+
+substr: $(test_src) all
+	@cc $(CFLAGS) main_substr.c -I $(INCLUDES) -L. -lft -lbsd && ./a.out
+
+vsubstr: substr all
+	valgrind --leak-check=full ./a.out
+
+strtrim: $(test_src) all
+	@cc $(CFLAGS) main_strtrim.c -I $(INCLUDES) -L. -lft && ./a.out
+
+vstrtrim: strtrim all
+	valgrind --leak-check=full ./a.out
+
+split: $(test_src) all
+	@cc $(CFLAGS) main_split.c -I $(INCLUDES) -L. -lft && ./a.out
+
+vsplit: split all
+	valgrind --leak-check=full ./a.out
+
+lstadd_front: $(test_src) bonus
+	@cc $(CFLAGS) main_lstadd_front.c -I $(INCLUDES) -L. -lft && ./a.out
+
+vlstadd_front: lstadd_front
+	valgrind --leak-check=full ./a.out
+
+lstadd_back: $(test_src) bonus
+	@cc $(CFLAGS) main_lstadd_back.c -I $(INCLUDES) -L. -lft && ./a.out
+
+vlstadd_back: lstadd_back
+	valgrind --leak-check=full ./a.out
+
+lstlast: $(test_src) bonus
+	@cc $(CFLAGS) main_lstlast.c -I $(INCLUDES) -L. -lft && ./a.out
+
+vlstlast: lstlast
+	valgrind --leak-check=full ./a.out
+
+lstsize: $(test_src) bonus
+	@cc $(CFLAGS) main_lstsize_test.c -I $(INCLUDES) -L. -lft &./a.out 
+
+vlstsize: lstsize
+	valgrind --leak-check=full ./a.out
+
+lstclear: $(test_src) bonus
+	@cc $(CFLAGS) main_lstclear.c -I $(INCLUDES) -L. -lft && ./a.out
+
+vlstclear: lstclear
+	valgrind --leak-check=full ./a.out
+
+lstmap: $(test_src) bonus
+	@cc $(CFLAGS) main_lstmap.c -I $(INCLUDES) -L. -lft && ./a.out
+	
+vlstmap: lstmap
+	valgrind --leak-check=full ./a.out
+
+
