@@ -3,13 +3,13 @@ name: valgrind
 on:
   push:
     branches:
-    - master
+    - main
 jobs:
    test:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: tests
+        working-directory: tests/tests_from_scratch
     steps:
       - uses: actions/checkout@v2
       - name: Install valgrind
