@@ -17,7 +17,7 @@ static size_t	get_trimmed_len(const char *s, const char *set);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*trimed;
+	char	*trimmed;
 	size_t	t_len;
 
 	if (!s1)
