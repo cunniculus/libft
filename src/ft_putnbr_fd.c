@@ -6,7 +6,7 @@
 /*   By: guolivei <guolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 04:45:12 by guolivei          #+#    #+#             */
-/*   Updated: 2022/09/14 23:06:55 by guolivei         ###   ########.fr       */
+/*   Updated: 2022/09/15 01:49:01 by guolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,20 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*s;
-
-	s = ft_itoa(n);
-	ft_putstr_fd(s, fd);
-	free(s);
+	if (n >= 0 && n < 10)
+	{
+		ft_putchar_fd(n % 10 + 48, fd);
+		return ;
+	}
+	else if (n > -10 && n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		ft_putchar_fd((n % 10 * (-1)) + 48, fd);
+		return ;
+	}
+	ft_putnbr_fd(n / 10, fd);
+	if (n < 0)
+		ft_putchar_fd((n % 10 * (-1)) + 48, fd);
+	else
+		ft_putchar_fd(n % 10 + 48, fd);
 }

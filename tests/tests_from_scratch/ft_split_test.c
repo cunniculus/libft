@@ -20,7 +20,7 @@ void	ft_split_test (void)
 	//01
 	printf("01. ");
 	split = ft_split("Home alone, man!", ' ');
-	if (!strcmp(split[0], "Home") && \
+	if (!strcmp(split[0], "home") && \
 			!strcmp(split[1], "alone,")  && \
 			!strcmp(split[2], "man!") && \
 			split[3] ==  NULL)
