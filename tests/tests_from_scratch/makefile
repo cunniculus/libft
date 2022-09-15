@@ -20,9 +20,11 @@ CFLAGS = -Wall -Wextra -Werror
 all: $(NAME_TEST)
 	@./$(NAME_TEST)
 
-$(NAME_TEST): $(SRC_MAIN) $(LIBTEST)
-	@make -C $(LIBDIR) bonus
+$(NAME_TEST): $(SRC_MAIN) $(LIBTEST) $(LIBDIR)/libft.a
 	@gcc  $(CFLAGS) -o $(NAME_TEST) -I$(INCLUDEDIR) -I. $(SRC_MAIN) -L. -lft_test -L$(LIBDIR) -lft
+
+$(LIBDIR)/libft.a:  
+	@make -C $(LIBDIR) bonus
 
 $(LIBTEST): $(OBJ_TEST)
 	ar crs $(LIBTEST) $(OBJ_TEST) 
@@ -31,7 +33,7 @@ $(OBJ_TEST): $(SRCS_TEST) $(HEADER_TEST)
 	cc $(CFLAGS) -c $(SRCS_TEST) -I$(INCLUDEDIR)
 
 leakfull: $(NAME_TEST)
-	@valgrind --leak-check=full ./$(NAME_TEST)
+	-@valgrind --error-exitcode=42 --leak-check=full ./$(NAME_TEST)
 
 ft_split:  $(NAME_TEST)
 	@./$(NAME_TEST) ft_split

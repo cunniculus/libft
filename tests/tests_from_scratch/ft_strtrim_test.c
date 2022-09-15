@@ -33,7 +33,7 @@ int	ft_strtrim_test (void)
 // 1
 	printf("01:");
 	x = ft_strtrim("Guilherme", " ");
-	if (!strcmp(x, "guilherme")) 
+	if (!strcmp(x, "Guilherme")) 
 		printf(PRINTGRN("OK "));
 	else
 	{
