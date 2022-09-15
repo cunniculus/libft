@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+#include <errno.h>
 #include "libft.h"
 #include "libft_test.h"
 
@@ -12,7 +13,7 @@
 static void	print_split(char **split);
 static void	free_split(char **split);
 
-void	ft_split_test (void)
+int	ft_split_test (void)
 {
 	char **split;
 
@@ -20,13 +21,14 @@ void	ft_split_test (void)
 	//01
 	printf("01. ");
 	split = ft_split("Home alone, man!", ' ');
-	if (!strcmp(split[0], "home") && \
+	if (!strcmp(split[0], "Home") && \
 			!strcmp(split[1], "alone,")  && \
 			!strcmp(split[2], "man!") && \
 			split[3] ==  NULL)
 		printf(PRINTGRN("OK "));
 	else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		print_split(split);
 	}
@@ -41,6 +43,7 @@ void	ft_split_test (void)
 		printf(PRINTGRN("OK "));
 	else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		print_split(split);
 	}
@@ -55,6 +58,7 @@ void	ft_split_test (void)
 		printf(PRINTGRN("OK "));
 	else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		print_split(split);
 	}
@@ -68,6 +72,7 @@ void	ft_split_test (void)
 		printf(PRINTGRN("OK "));
 	else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		print_split(split);
 	}
@@ -81,6 +86,7 @@ void	ft_split_test (void)
 		printf(PRINTGRN("OK "));
 	else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		print_split(split);
 	}
@@ -94,6 +100,7 @@ void	ft_split_test (void)
 		printf(PRINTGRN("OK "));
 	else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		print_split(split);
 	}
@@ -107,6 +114,7 @@ void	ft_split_test (void)
 		printf(PRINTGRN("OK "));
 	else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		print_split(split);
 	}
@@ -120,6 +128,7 @@ void	ft_split_test (void)
 		printf(PRINTGRN("OK "));
 	else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		print_split(split);
 	}
@@ -133,6 +142,7 @@ void	ft_split_test (void)
 	else
 	{
 		printf(PRINTRED("FAIL! "));
+		errno = -666;
 		print_split(split);
 	}
 	free_split(split);
@@ -146,6 +156,7 @@ void	ft_split_test (void)
 	else
 	{
 		printf(PRINTRED("FAIL! "));
+		errno = -666;
 		print_split(split);
 	}
 	free_split(split);
@@ -157,6 +168,7 @@ void	ft_split_test (void)
 		printf(PRINTGRN("OK "));
 	else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		print_split(split);
 	}
@@ -169,6 +181,7 @@ void	ft_split_test (void)
 		printf(PRINTGRN("OK "));
 	else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		print_split(split);
 	}
@@ -181,6 +194,7 @@ void	ft_split_test (void)
 		printf(PRINTGRN("OK "));
 	else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		print_split(split);
 	}
@@ -198,6 +212,7 @@ void	ft_split_test (void)
 		printf(PRINTGRN("OK "));
 	else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		print_split(split);
 	}
@@ -211,6 +226,7 @@ void	ft_split_test (void)
 	else
 	{
 		printf(PRINTRED("FAIL! "));
+		errno = -666;
 		print_split(split);
 	}
 	free_split(split);
@@ -228,11 +244,16 @@ void	ft_split_test (void)
 		printf(PRINTGRN("OK "));
 	else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		print_split(split);
 	}
 	free_split(split);
 	printf("\n");
+	if(errno == -666)
+		return (FAIL);
+	else
+		return (SUCCESS);
 }
 
 static void	print_split(char **split)

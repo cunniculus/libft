@@ -1,8 +1,10 @@
 #include "libft.h"
+#include "libft_test.h"
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <strings.h>
+#include <errno.h>
 
 #define PRINTRED(X)	"\033[31m"X"\033[0m"
 #define PRINTGRN(X)	"\033[32m"X"\033[0m"
@@ -24,17 +26,18 @@
 #define BOLDCYAN    "\033[1m\033[36m"   /* Bold Cyan */
 #define BOLDWHITE   "\033[1m\033[37m"   /* Bold White */
 
-void	ft_strtrim_test (void)
+int	ft_strtrim_test (void)
 {
 	char *x;
 	printf("ft_strtrim:\n");
 // 1
 	printf("01:");
 	x = ft_strtrim("Guilherme", " ");
-	if (!strcmp(x, "Guilherme")) 
+	if (!strcmp(x, "guilherme")) 
 		printf(PRINTGRN("OK "));
 	else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		printf("%s ", x);
 	}
@@ -47,6 +50,7 @@ void	ft_strtrim_test (void)
 		printf(PRINTGRN("OK "));
 	else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		printf("%s ", x);
 	}
@@ -59,6 +63,7 @@ void	ft_strtrim_test (void)
 		printf(PRINTGRN("OK "));
 	else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		printf("%s ", x);
 	}
@@ -71,6 +76,7 @@ void	ft_strtrim_test (void)
 		printf(PRINTGRN("OK "));
 	else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		printf("%s ", x);
 	}
@@ -87,6 +93,7 @@ void	ft_strtrim_test (void)
         printf(PRINTGRN("OK "));
     else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		printf("%s ", trimmed);
 	}
@@ -101,6 +108,7 @@ void	ft_strtrim_test (void)
         printf(PRINTGRN("OK "));
     else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		printf("%s ", trimmed);
 	}
@@ -115,6 +123,7 @@ void	ft_strtrim_test (void)
         printf(PRINTGRN("OK "));
     else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		printf("%s ", trimmed);
 	}
@@ -129,6 +138,7 @@ void	ft_strtrim_test (void)
         printf(PRINTGRN("OK "));
     else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		printf("%s ", trimmed);
 	}
@@ -143,6 +153,7 @@ void	ft_strtrim_test (void)
         printf(PRINTGRN("OK "));
     else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		printf("%s ", trimmed);
 	}
@@ -157,6 +168,7 @@ void	ft_strtrim_test (void)
         printf(PRINTGRN("OK "));
     else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		printf("%s ", trimmed);
 	}
@@ -171,6 +183,7 @@ void	ft_strtrim_test (void)
         printf(PRINTGRN("OK "));
     else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		printf("%s ", trimmed);
 	}
@@ -185,6 +198,7 @@ void	ft_strtrim_test (void)
         printf(PRINTGRN("OK "));
     else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		printf("%s ", trimmed);
 	}
@@ -199,6 +213,7 @@ void	ft_strtrim_test (void)
         printf(PRINTGRN("OK "));
     else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		printf("%s ", trimmed);
 	}
@@ -213,6 +228,7 @@ void	ft_strtrim_test (void)
         printf(PRINTGRN("OK "));
     else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		printf("%s ", trimmed);
 	}
@@ -227,6 +243,7 @@ void	ft_strtrim_test (void)
         printf(PRINTGRN("OK "));
     else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		printf("%s ", trimmed);
 	}
@@ -241,6 +258,7 @@ void	ft_strtrim_test (void)
         printf(PRINTGRN("OK "));
     else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		printf("%s ", trimmed);
 	}
@@ -255,6 +273,7 @@ void	ft_strtrim_test (void)
         printf(PRINTGRN("OK "));
     else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		printf("%s ", trimmed);
 	}
@@ -269,6 +288,7 @@ void	ft_strtrim_test (void)
         printf(PRINTGRN("OK "));
     else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		printf("%s ", trimmed);
 	}
@@ -283,6 +303,7 @@ void	ft_strtrim_test (void)
         printf(PRINTGRN("OK "));
     else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		printf("%s ", trimmed);
 	}
@@ -297,6 +318,7 @@ void	ft_strtrim_test (void)
         printf(PRINTGRN("OK "));
     else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		printf("%s ", trimmed);
 	}
@@ -311,9 +333,14 @@ void	ft_strtrim_test (void)
         printf(PRINTGRN("OK "));
     else
 	{
+		errno = -666;
 		printf(PRINTRED("FAIL! "));
 		printf("%s ", trimmed);
 	}
     free(trimmed);
     free(s1);
+	if (errno == -666)
+		return (FAIL);
+	else
+		return (SUCCESS);
 }

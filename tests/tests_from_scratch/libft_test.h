@@ -1,6 +1,8 @@
 #ifndef LIBFT_TEST_H
 # define LIBFT_TEST_H
+# define FAIL		-79
+# define SUCCESS	42
 #include "libft.h"
-void	ft_split_test(void);
-void	ft_strtrim_test(void);
+int	ft_split_test(void);
+int	ft_strtrim_test(void);
 #endif

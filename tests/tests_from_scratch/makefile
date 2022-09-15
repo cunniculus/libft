@@ -36,6 +36,9 @@ leakfull: $(NAME_TEST)
 ft_split:  $(NAME_TEST)
 	@./$(NAME_TEST) ft_split
 
+ft_strtrim:	$(NAME_TEST)
+	@./$(NAME_TEST) ft_strtrim
+
 clean:
 	@make -C $(LIBDIR) clean
 	@rm -f $(OBJ_TEST)
